@@ -115,6 +115,17 @@
             @click.native="theme = 'light'"
           ></IconMoon>
         </li>
+        <li>
+          <IconHamburgerMenu
+            class="block h-8 w-8 transition-all lg:hidden"
+            @click.native="toggleMobileMenu"
+          >
+          </IconHamburgerMenu>
+          <MobileMenu
+            v-show="showMobileMenu"
+            @toggleMobileMenu="toggleMobileMenu"
+          ></MobileMenu>
+        </li>
       </ul>
     </nav>
   </header>
@@ -128,12 +139,17 @@ export default {
       isScrolled: false,
       isHomePage: true,
       activeClass: 'text-primary underline',
+      showMobileMenu: null,
+      bodyClass: '',
     }
   },
   head() {
     return {
       htmlAttrs: {
         class: this.theme,
+      },
+      bodyAttrs: {
+        class: this.bodyClass,
       },
     }
   },
@@ -148,17 +164,30 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.handleResize)
     if (localStorage.theme) {
       this.theme = localStorage.theme
     } else {
       this.theme = 'light'
     }
   },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.handleResize)
+  },
   methods: {
     handleScroll() {
       const headerHeight = window.scrollY
       if (headerHeight === 0) this.isScrolled = false
       if (headerHeight > 0) this.isScrolled = true
+    },
+    handleResize() {
+      if (window.innerWidth > 1024) this.showMobileMenu = false
+    },
+    toggleMobileMenu() {
+      this.showMobileMenu = !this.showMobileMenu
+      if (this.bodyClass !== '') this.bodyClass = ''
+      else this.bodyClass = 'overflow-hidden'
     },
   },
 }
