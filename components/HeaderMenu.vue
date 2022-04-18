@@ -20,19 +20,27 @@
             : 'text-white',
         ]"
       >
-        <NuxtLink v-slot="{ navigate }" to="/" custom>
+        <NuxtLink v-slot="{ navigate, isExactActive }" to="/" custom>
           <li class="relative hidden lg:block" @click="navigate">
             <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4 hover:text-primary hover:underline"
+              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+              :class="[
+                isExactActive
+                  ? activeClass
+                  : 'hover:text-primary hover:underline',
+              ]"
             >
               Home
             </span>
           </li>
         </NuxtLink>
-        <NuxtLink v-slot="{ navigate }" to="/projects" custom>
+        <NuxtLink v-slot="{ navigate, isActive }" to="/projects" custom>
           <li class="relative hidden lg:block" @click="navigate">
             <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4 hover:text-primary hover:underline"
+              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+              :class="[
+                isActive ? activeClass : 'hover:text-primary hover:underline',
+              ]"
             >
               Projects
             </span>
@@ -58,26 +66,39 @@
             </div>
           </li>
         </NuxtLink>
-        <NuxtLink v-slot="{ navigate }" to="/investor-relation" custom>
+        <NuxtLink
+          v-slot="{ navigate, isActive }"
+          to="/investor-relation"
+          custom
+        >
           <li class="relative hidden lg:block" @click="navigate">
             <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4 hover:text-primary hover:underline"
+              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+              :class="[
+                isActive ? activeClass : 'hover:text-primary hover:underline',
+              ]"
               >Investor Relation</span
             >
           </li>
         </NuxtLink>
-        <NuxtLink v-slot="{ navigate }" to="/our-company" custom>
+        <NuxtLink v-slot="{ navigate, isActive }" to="/our-company" custom>
           <li class="relative hidden lg:block" @click="navigate">
             <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4 hover:text-primary hover:underline"
+              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+              :class="[
+                isActive ? activeClass : 'hover:text-primary hover:underline',
+              ]"
               >Our Company</span
             >
           </li>
         </NuxtLink>
-        <NuxtLink v-slot="{ navigate }" to="/contact" custom>
+        <NuxtLink v-slot="{ navigate, isActive }" to="/contact" custom>
           <li class="relative hidden lg:block" @click="navigate">
             <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4 hover:text-primary hover:underline"
+              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+              :class="[
+                isActive ? activeClass : 'hover:text-primary hover:underline',
+              ]"
               >Contact</span
             >
           </li>
@@ -106,6 +127,7 @@ export default {
       theme: '',
       isScrolled: false,
       isHomePage: true,
+      activeClass: 'text-primary underline',
     }
   },
   head() {
@@ -141,3 +163,5 @@ export default {
   },
 }
 </script>
+
+<style scoped></style>
