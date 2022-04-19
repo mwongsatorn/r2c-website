@@ -2,10 +2,11 @@
   <div class="relative font-sora">
     <div
       id="bg-hero"
-      class="h-screen min-h-[45rem] w-full bg-[url('~assets/images/hero-section-bg.jpg')] bg-cover grayscale"
+      :style="{ 'background-image': `url(${bgHeroSection})` }"
+      class="h-screen min-h-[45rem] w-full bg-cover grayscale"
     ></div>
     <div
-      class="absolute top-0 left-0 h-screen min-h-[45rem] w-full bg-gradient-to-r from-gray-900/50 to-cyan-600/50 bg-cover px-4"
+      class="absolute top-0 left-0 h-screen min-h-[45rem] w-full bg-gradient-to-r from-black/50 to-cyan-600/50 bg-cover px-4"
     >
       <div
         class="mx-auto flex h-screen min-h-[45rem] max-w-7xl flex-col items-center justify-center space-y-8 lg:space-y-12"
@@ -99,8 +100,14 @@
 </template>
 
 <script>
+import bgHeroSection from '~/assets/images/hero-section-bg.jpg'
 export default {
   name: 'IndexPage',
+  data() {
+    return {
+      bgHeroSection,
+    }
+  },
 }
 </script>
 

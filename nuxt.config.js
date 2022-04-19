@@ -4,12 +4,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'r2c-website',
+    title: 'Ready to Connect',
     htmlAttrs: {
       lang: 'en',
-    },
-    bodyAttrs: {
-      class: ['dark:bg-gray-900'],
     },
     meta: [
       { charset: 'utf-8' },

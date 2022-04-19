@@ -120,7 +120,7 @@ export default {
       isHomePage: true,
       activeClass: 'text-primary underline',
       showMobileMenu: null,
-      bodyClass: '',
+      bodyClass: ['dark:bg-gray-900'],
     }
   },
   head() {
@@ -169,8 +169,9 @@ export default {
     },
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu
-      if (this.bodyClass !== '') this.bodyClass = ''
-      else this.bodyClass = 'overflow-hidden'
+      if (this.bodyClass.includes('overflow-hidden'))
+        this.bodyClass.splice(this.bodyClass.indexOf('overflow-hidden', 1))
+      else this.bodyClass.push('overflow-hidden')
     },
   },
 }
