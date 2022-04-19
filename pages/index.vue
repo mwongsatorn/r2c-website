@@ -2,19 +2,21 @@
   <div class="relative font-sora">
     <div
       id="bg-hero"
-      class="h-screen max-h-[70rem] min-h-[40rem] w-full bg-[url('~assets/images/hero-section-bg.jpg')] bg-cover grayscale"
+      class="h-screen min-h-[45rem] w-full bg-[url('~assets/images/hero-section-bg.jpg')] bg-cover grayscale"
     ></div>
     <div
-      class="absolute top-0 left-0 h-screen max-h-[70rem] min-h-[40rem] w-full bg-gradient-to-r from-gray-900/50 to-cyan-600/50 bg-cover px-4"
+      class="absolute top-0 left-0 h-screen min-h-[45rem] w-full bg-gradient-to-r from-gray-900/50 to-cyan-600/50 bg-cover px-4"
     >
       <div
-        class="mx-auto flex h-screen max-h-[70rem] min-h-[40rem] max-w-7xl flex-col items-center justify-center space-y-8 lg:space-y-12"
+        class="mx-auto flex h-screen min-h-[45rem] max-w-7xl flex-col items-center justify-center space-y-8 lg:space-y-12"
       >
-        <div class="text-xs font-thin uppercase text-white lg:text-2xl">
+        <div
+          class="text-xs font-thin uppercase text-white sm:text-xl lg:text-2xl"
+        >
           We are here to connect people together
         </div>
         <div
-          class="text-4xl font-extrabold uppercase text-white drop-shadow-sm lg:text-[5rem] lg:leading-[5rem]"
+          class="text-4xl font-extrabold uppercase text-white drop-shadow-sm sm:text-6xl lg:text-[5rem] lg:leading-[5rem]"
         >
           Are you
           <span
@@ -26,10 +28,11 @@
         </div>
         <NuxtLink v-slot="{ navigate }" to="/projects" custom>
           <div
-            class="w-fit cursor-pointer border-2 border-white bg-transparent px-4 py-2 transition-all duration-500 hover:border-transparent hover:bg-sky-800 lg:px-16 lg:py-6"
+            class="w-fit cursor-pointer border-2 border-white bg-transparent px-8 py-3 transition-all duration-500 hover:border-transparent hover:bg-sky-800 sm:px-12 sm:py-4 lg:px-16 lg:py-6"
             @click="navigate"
           >
-            <span class="font-bold uppercase text-white lg:text-2xl"
+            <span
+              class="text-base font-bold uppercase text-white sm:text-xl lg:text-2xl"
               >Connect
             </span>
           </div>
@@ -39,38 +42,54 @@
     <div class="py-[100px] dark:bg-gray-900">
       <div class="mx-auto max-w-7xl">
         <h1
-          class="mx-auto text-center text-5xl font-extrabold uppercase text-gray-900 dark:text-white"
+          class="mx-auto text-center text-3xl font-extrabold uppercase text-gray-900 dark:text-white sm:text-4xl lg:text-5xl"
         >
-          Regulator & Partner
+          Regulators & Partners
         </h1>
-        <div
-          class="grid grid-cols-4 place-items-center items-center justify-center gap-8 py-16"
-        >
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+        <div class="flex flex-wrap justify-center gap-8 py-16 px-4">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-01.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-02.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-03.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-04.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-05.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-06.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-07.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-08.png" alt="" />
           </div>
-          <div class="h-60 w-60 rounded-md bg-gray-100 p-2 dark:bg-gray-800">
+          <div
+            class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
+          >
             <img src="~/assets/images/partners-logo/partner-09.png" alt="" />
           </div>
         </div>

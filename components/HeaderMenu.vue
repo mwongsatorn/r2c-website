@@ -1,7 +1,7 @@
 <template>
   <header
     ref="header"
-    class="fixed top-0 left-0 z-10 w-full font-sora transition-all duration-300"
+    class="fixed top-0 left-0 z-10 w-full border-transparent font-sora transition-all duration-300"
     :class="[
       isScrolled || !isHomePage
         ? 'border-b-2 bg-white dark:border-gray-700 dark:bg-gray-900 '
@@ -44,26 +44,6 @@
             >
               Projects
             </span>
-            <div
-              class="absolute top-8 left-0 hidden w-[20rem] border-2 bg-white text-gray-800 shadow-lg"
-            >
-              <ul
-                class="flex flex-col items-center justify-center space-y-4 p-4 tracking-normal"
-              >
-                <li>LaoPay</li>
-                <li>LaoStaySafe</li>
-                <li>LaoCash</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-              </ul>
-            </div>
           </li>
         </NuxtLink>
         <NuxtLink
@@ -136,7 +116,7 @@ export default {
   data() {
     return {
       theme: '',
-      isScrolled: false,
+      isScrolled: null,
       isHomePage: true,
       activeClass: 'text-primary underline',
       showMobileMenu: null,
@@ -163,6 +143,9 @@ export default {
     },
   },
   mounted() {
+    if (this.$route.path !== '/') this.isHomePage = false
+    else this.isHomePage = true
+    this.handleScroll()
     window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.handleResize)
     if (localStorage.theme) {
