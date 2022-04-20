@@ -1,11 +1,11 @@
 <template>
   <header
     ref="header"
-    class="fixed top-0 left-0 z-10 w-full border-transparent font-sora transition-all duration-300"
+    class="fixed top-0 left-0 z-10 w-full font-sora transition-all duration-300"
     :class="[
       isScrolled || !isHomePage
         ? 'border-b-2 bg-white dark:border-gray-700 dark:bg-gray-900 '
-        : '',
+        : 'border-transparent',
     ]"
   >
     <nav class="mx-auto flex h-24 max-w-7xl items-center justify-center px-4">
@@ -165,7 +165,10 @@ export default {
       if (headerHeight > 0) this.isScrolled = true
     },
     handleResize() {
-      if (window.innerWidth > 1024) this.showMobileMenu = false
+      if (window.innerWidth > 1024) {
+        this.showMobileMenu = false
+        this.bodyClass.splice(this.bodyClass.indexOf('overflow-hidden', 1))
+      }
     },
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu
