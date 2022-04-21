@@ -1,113 +1,107 @@
 <template>
   <header
     ref="header"
-    class="fixed top-0 left-0 z-10 w-full font-sora transition-all duration-300"
+    class="fixed top-0 left-0 z-10 w-full font-sora text-xs font-bold uppercase tracking-widest transition-all duration-300"
     :class="[
       isScrolled || !isHomePage
-        ? 'border-b-2 bg-white dark:border-gray-700 dark:bg-gray-900 '
-        : 'border-transparent',
+        ? 'border-b-2 bg-white text-gray-800 dark:border-gray-700 dark:bg-gray-900 dark:text-white '
+        : 'border-transparent text-white',
     ]"
   >
-    <nav class="mx-auto flex h-24 max-w-7xl items-center justify-center px-4">
-      <div class="">
+    <div class="mx-auto flex max-w-7xl items-center px-4">
+      <div>
         <img src="~/assets/images/r2c-logo.png" alt="" class="w-52" />
       </div>
-      <ul
-        class="ml-auto flex items-center justify-center space-x-10 text-xs font-bold uppercase tracking-widest"
-        :class="[
-          isScrolled || !isHomePage
-            ? 'text-gray-800 dark:text-white'
-            : 'text-white',
-        ]"
-      >
-        <NuxtLink v-slot="{ navigate, isExactActive }" to="/" custom>
-          <li class="relative hidden lg:block" @click="navigate">
-            <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
-              :class="[
-                isExactActive
-                  ? activeClass
-                  : 'hover:text-primary hover:underline',
-              ]"
+      <div class="ml-auto flex items-center space-x-8">
+        <nav class="flex h-24 items-center">
+          <ul class="ml-auto flex items-center justify-center space-x-12">
+            <NuxtLink v-slot="{ navigate, isExactActive }" to="/" custom>
+              <li class="relative hidden lg:block" @click="navigate">
+                <span
+                  class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+                  :class="[
+                    isExactActive
+                      ? activeClass
+                      : 'hover:text-primary hover:underline',
+                  ]"
+                >
+                  Home
+                </span>
+              </li>
+            </NuxtLink>
+            <NuxtLink v-slot="{ navigate, isActive }" to="/projects" custom>
+              <li class="relative hidden lg:block" @click="navigate">
+                <span
+                  class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+                  :class="[
+                    isActive
+                      ? activeClass
+                      : 'hover:text-primary hover:underline',
+                  ]"
+                >
+                  Projects
+                </span>
+              </li>
+            </NuxtLink>
+            <NuxtLink
+              v-slot="{ navigate, isActive }"
+              to="/investor-relation"
+              custom
             >
-              Home
-            </span>
-          </li>
-        </NuxtLink>
-        <NuxtLink v-slot="{ navigate, isActive }" to="/projects" custom>
-          <li class="relative hidden lg:block" @click="navigate">
-            <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
-              :class="[
-                isActive ? activeClass : 'hover:text-primary hover:underline',
-              ]"
-            >
-              Projects
-            </span>
-          </li>
-        </NuxtLink>
-        <NuxtLink
-          v-slot="{ navigate, isActive }"
-          to="/investor-relation"
-          custom
-        >
-          <li class="relative hidden lg:block" @click="navigate">
-            <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
-              :class="[
-                isActive ? activeClass : 'hover:text-primary hover:underline',
-              ]"
-              >Investor Relation</span
-            >
-          </li>
-        </NuxtLink>
-        <NuxtLink v-slot="{ navigate, isActive }" to="/our-company" custom>
-          <li class="relative hidden lg:block" @click="navigate">
-            <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
-              :class="[
-                isActive ? activeClass : 'hover:text-primary hover:underline',
-              ]"
-              >Our Company</span
-            >
-          </li>
-        </NuxtLink>
-        <NuxtLink v-slot="{ navigate, isActive }" to="/contact" custom>
-          <li class="relative hidden lg:block" @click="navigate">
-            <span
-              class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
-              :class="[
-                isActive ? activeClass : 'hover:text-primary hover:underline',
-              ]"
-              >Contact</span
-            >
-          </li>
-        </NuxtLink>
-        <li>
-          <IconSun
-            v-show="theme == 'light'"
-            class="h-6 w-6 cursor-pointer hover:opacity-50"
-            @click.native="theme = 'dark'"
-          ></IconSun>
-          <IconMoon
-            v-show="theme == 'dark'"
-            class="h-6 w-6 cursor-pointer hover:opacity-50"
-            @click.native="theme = 'light'"
-          ></IconMoon>
-        </li>
-        <li>
+              <li class="relative hidden lg:block" @click="navigate">
+                <span
+                  class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+                  :class="[
+                    isActive
+                      ? activeClass
+                      : 'hover:text-primary hover:underline',
+                  ]"
+                  >Investor Relation</span
+                >
+              </li>
+            </NuxtLink>
+            <NuxtLink v-slot="{ navigate, isActive }" to="/our-company" custom>
+              <li class="relative hidden lg:block" @click="navigate">
+                <span
+                  class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+                  :class="[
+                    isActive
+                      ? activeClass
+                      : 'hover:text-primary hover:underline',
+                  ]"
+                  >Our Company</span
+                >
+              </li>
+            </NuxtLink>
+            <NuxtLink v-slot="{ navigate, isActive }" to="/contact" custom>
+              <li class="relative hidden lg:block" @click="navigate">
+                <span
+                  class="cursor-pointer decoration-solid decoration-2 underline-offset-4"
+                  :class="[
+                    isActive
+                      ? activeClass
+                      : 'hover:text-primary hover:underline',
+                  ]"
+                  >Contact</span
+                >
+              </li>
+            </NuxtLink>
+          </ul>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <ThemeSwitch :theme="theme" @click.native="toggleTheme" />
           <IconHamburgerMenu
             class="block h-8 w-8 transition-all lg:hidden"
             @click.native="toggleMobileMenu"
-          >
-          </IconHamburgerMenu>
-          <MobileMenu
-            v-show="showMobileMenu"
-            @toggleMobileMenu="toggleMobileMenu"
-          ></MobileMenu>
-        </li>
-      </ul>
-    </nav>
+          />
+        </div>
+      </div>
+    </div>
+    <MobileMenu
+      v-show="showMobileMenu"
+      @toggleTheme="toggleTheme"
+      @toggleMobileMenu="toggleMobileMenu"
+    />
   </header>
 </template>
 
@@ -175,6 +169,10 @@ export default {
       if (this.bodyClass.includes('overflow-hidden'))
         this.bodyClass.splice(this.bodyClass.indexOf('overflow-hidden', 1))
       else this.bodyClass.push('overflow-hidden')
+    },
+    toggleTheme() {
+      if (this.theme === 'light') this.theme = 'dark'
+      else this.theme = 'light'
     },
   },
 }

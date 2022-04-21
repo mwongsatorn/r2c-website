@@ -72,7 +72,7 @@
         </NuxtLink>
       </ul>
       <IconCross
-        class="absolute top-4 right-4 h-4 w-4"
+        class="absolute top-4 right-4 h-4 w-4 cursor-pointer"
         @click.native="$emit('toggleMobileMenu')"
       ></IconCross>
     </div>
