@@ -1,7 +1,7 @@
 <template>
   <div class="fixed inset-0 backdrop-blur-sm">
     <div
-      class="fixed top-4 right-4 w-full max-w-sm rounded-lg bg-white p-8 text-black dark:bg-gray-900 dark:text-slate-300"
+      class="fixed top-4 right-4 w-full max-w-sm rounded-lg border-2 bg-white p-8 text-black dark:bg-gray-900 dark:text-slate-300"
     >
       <ul class="flex flex-col space-y-8">
         <NuxtLink v-slot="{ navigate, isExactActive }" to="/" custom>

@@ -4,7 +4,7 @@
     class="fixed top-0 left-0 z-10 w-full font-sora text-xs font-bold uppercase tracking-widest transition-all duration-300"
     :class="[
       isScrolled || !isHomePage
-        ? 'border-b-2 bg-white text-gray-800 dark:border-gray-700 dark:bg-gray-900 dark:text-white '
+        ? 'border-b-2 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-white '
         : 'border-transparent text-white',
     ]"
   >
@@ -161,7 +161,8 @@ export default {
     handleResize() {
       if (window.innerWidth > 1024) {
         this.showMobileMenu = false
-        this.bodyClass.splice(this.bodyClass.indexOf('overflow-hidden', 1))
+        if (this.bodyClass.includes('overflow-hidden'))
+          this.bodyClass.splice(this.bodyClass.indexOf('overflow-hidden', 1))
       }
     },
     toggleMobileMenu() {
