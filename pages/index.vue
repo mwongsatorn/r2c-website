@@ -3,7 +3,7 @@
     <div
       id="bg-hero"
       :style="{ 'background-image': `url(${bgHeroSection})` }"
-      class="h-screen min-h-[45rem] w-full bg-cover grayscale"
+      class="h-screen min-h-[45rem] w-full bg-cover"
     ></div>
     <div
       class="absolute top-0 left-0 h-screen min-h-[45rem] w-full bg-gradient-to-r from-black/50 to-cyan-600/50 bg-cover px-4"
@@ -40,14 +40,14 @@
         </NuxtLink>
       </div>
     </div>
-    <div class="py-[100px] dark:bg-gray-900">
+    <div class="py-[100px] px-4 dark:bg-gray-900">
       <div class="mx-auto max-w-7xl">
         <h1
           class="mx-auto text-center text-2xl font-bold uppercase text-gray-900 dark:text-white sm:text-3xl lg:text-4xl"
         >
           Regulators & Partners
         </h1>
-        <div class="flex flex-wrap justify-center gap-2 py-16 px-4">
+        <div class="flex flex-wrap justify-center gap-2 py-16">
           <div
             class="h-32 w-32 rounded-md bg-gray-100 p-2 dark:bg-gray-800 sm:h-48 sm:w-48"
           >
