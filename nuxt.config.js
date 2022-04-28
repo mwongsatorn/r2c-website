@@ -17,7 +17,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'We are "Ready to Connect (R2C)" and we are here to connect people together. Are you ready to connect?',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -30,10 +35,7 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: [
-    { path: '~/components', pathPrefix: false },
-    { path: '~/components/icons', prefix: 'Icon' },
-  ],
+  components: ['~/components', { path: '~/components/icons', prefix: 'Icon' }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

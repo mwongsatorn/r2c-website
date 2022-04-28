@@ -1,20 +1,20 @@
 <template>
   <header
     ref="header"
-    class="fixed top-0 left-0 z-10 w-full font-sora text-xs font-bold uppercase tracking-widest transition-all duration-300"
+    class="fixed top-0 left-0 z-10 h-24 w-full font-sora text-xs font-bold uppercase tracking-widest transition-all duration-300"
     :class="[
       isScrolled || !isHomePage
         ? 'border-b-2 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-white '
         : 'border-transparent text-white',
     ]"
   >
-    <div class="mx-auto flex max-w-7xl items-center px-4">
-      <div>
+    <div class="mx-auto flex h-full max-w-7xl items-center px-4">
+      <div class="">
         <img src="~/assets/images/r2c-logo.png" alt="" class="w-52" />
       </div>
       <div class="ml-auto flex items-center space-x-8">
-        <nav class="flex h-24 items-center">
-          <ul class="ml-auto flex items-center justify-center space-x-12">
+        <nav class="">
+          <ul class="flex space-x-12">
             <NuxtLink v-slot="{ navigate, isExactActive }" to="/" custom>
               <li class="relative hidden lg:block" @click="navigate">
                 <span
@@ -88,7 +88,7 @@
             </NuxtLink>
           </ul>
         </nav>
-        <div class="flex items-center space-x-4">
+        <div>
           <ThemeSwitch :theme="theme" @click.native="toggleTheme" />
           <IconHamburgerMenu
             class="block h-8 w-8 transition-all lg:hidden"
