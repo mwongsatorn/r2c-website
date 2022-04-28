@@ -88,7 +88,7 @@
             </NuxtLink>
           </ul>
         </nav>
-        <div>
+        <div class="flex space-x-4">
           <ThemeSwitch :theme="theme" @click.native="toggleTheme" />
           <IconHamburgerMenu
             class="block h-8 w-8 transition-all lg:hidden"
